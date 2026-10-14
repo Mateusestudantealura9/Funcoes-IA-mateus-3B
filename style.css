@@ -1,0 +1,301 @@
+/* Importação de Fontes */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+:root {
+    --bg-dark: #020b06;
+    --verde-escuro-base: #041d11;
+    --verde-principal: #00e676;
+    --verde-neon: #00ff88;
+    --verde-glow: rgba(0, 230, 118, 0.25);
+    --modal-bg: rgba(4, 25, 15, 0.88);
+    --modal-border: rgba(0, 230, 118, 0.22);
+    --text-color: #e8f5e9;
+    --text-secondary: #81c784;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-color);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden;
+    position: relative;
+    padding: 20px;
+}
+
+/* Fundo com efeito gradiente verde escuro e brilho */
+.background-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(circle at 20% 20%, rgba(0, 230, 118, 0.12) 0%, transparent 40%),
+        radial-gradient(circle at 80% 80%, rgba(2, 45, 24, 0.5) 0%, transparent 50%);
+    z-index: -1;
+}
+
+/* Estrutura do Modal Moderno 3D Glassmorphism Verde Escuro */
+.modal-container {
+    background: var(--modal-bg);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid var(--modal-border);
+    box-shadow: 
+        0 20px 50px rgba(0, 0, 0, 0.95),
+        0 0 30px var(--verde-glow);
+    border-radius: 24px;
+    width: 100%;
+    max-width: 750px;
+    padding: 40px;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.modal-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* Objeto 3D no Topo */
+.badge-3d {
+    width: 70px;
+    height: 70px;
+    margin: 0 auto 15px auto;
+    background: linear-gradient(135deg, var(--verde-principal), #00695c);
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 32px;
+    color: #020b06;
+    box-shadow: 
+        0 10px 20px var(--verde-glow),
+        inset 0 2px 5px rgba(255, 255, 255, 0.4);
+    transform: rotateX(10deg) rotateY(-10deg) translateZ(10px);
+    transition: transform 0.4s ease;
+}
+
+.badge-3d:hover {
+    transform: rotateX(0deg) rotateY(0deg) translateZ(20px) scale(1.05);
+}
+
+.modal-header h1 {
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.highlight {
+    color: var(--verde-neon);
+    text-shadow: 0 0 10px var(--verde-glow);
+}
+
+.modal-header p {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    margin-top: 5px;
+}
+
+/* Caixas de Busca e Input */
+.search-box {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 25px;
+}
+
+.search-box input {
+    flex: 1;
+    background: rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(0, 230, 118, 0.25);
+    border-radius: 14px;
+    padding: 15px 20px;
+    color: var(--text-color);
+    font-size: 1rem;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.search-box input:focus {
+    border-color: var(--verde-principal);
+    box-shadow: 0 0 15px var(--verde-glow);
+    background: rgba(0, 0, 0, 0.7);
+}
+
+/* Botão 3D */
+.btn-3d {
+    background: linear-gradient(135deg, var(--verde-principal), #00897b);
+    color: #020b06;
+    border: none;
+    border-radius: 14px;
+    padding: 0 25px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 6px 0 #004d40, 0 10px 15px rgba(0, 0, 0, 0.5);
+    transition: all 0.1s ease;
+    transform: translateY(-2px);
+}
+
+.btn-3d:active {
+    transform: translateY(4px);
+    box-shadow: 0 0 0 #004d40, 0 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Sugestões Rápidas */
+.quick-questions {
+    margin-bottom: 30px;
+}
+
+.quick-questions span {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    display: block;
+    margin-bottom: 10px;
+}
+
+.tags-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.tag {
+    background: rgba(0, 230, 118, 0.08);
+    border: 1px solid rgba(0, 230, 118, 0.2);
+    padding: 8px 14px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: var(--text-color);
+}
+
+.tag:hover {
+    background: var(--verde-principal);
+    color: #020b06;
+    font-weight: 600;
+    box-shadow: 0 0 12px var(--verde-glow);
+}
+
+/* Card do Resultado */
+.card-resultado {
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 16px;
+    padding: 25px;
+    border: 1px solid rgba(0, 230, 118, 0.15);
+}
+
+.resultado-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.resultado-header h2 {
+    font-size: 1.1rem;
+    color: var(--verde-neon);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-audio {
+    background: rgba(0, 230, 118, 0.1);
+    border: 1px solid var(--verde-principal);
+    color: var(--verde-principal);
+    padding: 8px 15px;
+    border-radius: 12px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.85rem;
+    transition: all 0.3s ease;
+}
+
+.btn-audio:hover {
+    background: var(--verde-principal);
+    color: #020b06;
+    box-shadow: 0 0 12px var(--verde-glow);
+}
+
+.btn-audio.falando {
+    animation: pulse 1.2s infinite;
+    background: #ff5252;
+    border-color: #ff5252;
+    color: #fff;
+}
+
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(255, 82, 82, 0.7); }
+    70% { box-shadow: 0 0 0 10px rgba(255, 82, 82, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(255, 82, 82, 0); }
+}
+
+.loading {
+    color: var(--verde-neon);
+    font-size: 0.95rem;
+    margin-bottom: 15px;
+}
+
+.texto-resposta {
+    line-height: 1.6;
+    color: #c8e6c9;
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+}
+
+.noticia-link-container {
+    background: rgba(0, 230, 118, 0.08);
+    border-left: 3px solid var(--verde-principal);
+    padding: 12px 15px;
+    border-radius: 0 8px 8px 0;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.noticia-link-container a {
+    color: var(--verde-neon);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.noticia-link-container a:hover {
+    text-decoration: underline;
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+    .search-box {
+        flex-direction: column;
+    }
+    
+    .btn-3d {
+        justify-content: center;
+        padding: 15px;
+    }
+
+    .resultado-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+}

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DuckDuckGo Game Search 3D</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- FontAwesome para Ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <div class="background-overlay"></div>
+
+    <!-- Modal Principal -->
+    <main class="modal-container">
+        <header class="modal-header">
+            <div class="badge-3d">
+                <i class="fa-solid fa-compass"></i>
+            </div>
+            <h1>DuckDuckGo <span class="highlight">Games</span></h1>
+            <p>Pesquisa integrada via DuckDuckGo. A resposta aparece diretamente aqui.</p>
+        </header>
+
+        <!-- Área de Input da Pergunta -->
+        <section class="search-box">
+            <input type="text" id="campo-pergunta" placeholder="Digite sua pergunta (ex: O que é PlayStation 5, GTA 6...)" autocomplete="off">
+            <button id="btn-perguntar" class="btn-3d">
+                <span>Buscar</span>
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+        </section>
+
+        <!-- Sugestões Rápidas -->
+        <section class="quick-questions">
+            <span>Perguntas frequentes:</span>
+            <div class="tags-container" id="tags-sugestoes">
+                <span class="tag" data-query="PlayStation 5">PlayStation 5</span>
+                <span class="tag" data-query="Grand Theft Auto VI">GTA VI</span>
+                <span class="tag" data-query="Nintendo Switch">Nintendo Switch</span>
+                <span class="tag" data-query="Xbox Series X">Xbox Series X</span>
+                <span class="tag" data-query="Elden Ring">Elden Ring</span>
+            </div>
+        </section>
+
+        <!-- Card de Resultado na Página -->
+        <section class="card-resultado" id="card-resultado">
+            <div class="resultado-header">
+                <h2><i class="fa-solid fa-shield-halved"></i> Resposta do DuckDuckGo</h2>
+                <button id="btn-ouvir" class="btn-audio" title="Ouvir resposta em voz por I.A">
+                    <i class="fa-solid fa-volume-high"></i>
+                    <span>Ouvir Voz I.A</span>
+                </button>
+            </div>
+            
+            <div id="status-loading" class="loading" style="display: none;">
+                <i class="fa-solid fa-spinner fa-spin"></i> Consultando DuckDuckGo na web...
+            </div>
+
+            <p id="texto-resposta" class="texto-resposta">
+                Faça uma pergunta acima para carregar as informações diretamente nesta tela.
+            </p>
+
+            <div class="noticia-link-container" id="container-link" style="display: none;">
+                <i class="fa-solid fa-link"></i>
+                <span>Link da Notícia / Fonte:</span>
+                <a id="link-noticia" href="#" target="_blank" rel="noopener noreferrer">Acessar Notícia</a>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
